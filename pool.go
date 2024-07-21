@@ -271,7 +271,7 @@ func InitPool(workerNum, maxWorkerNum int, workerIdleTime time.Duration) *Pool {
 		maxWorkerNum = workerNum
 	}
 	if workerIdleTime <= 0 {
-		workerIdleTime = 3 * time.Second
+		workerIdleTime = 30 * time.Second
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 	taskChan := make(chan *Task, workerNum)
